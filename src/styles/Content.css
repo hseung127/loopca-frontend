@@ -1,0 +1,19 @@
+/* 가운데 영역 공통 */
+.content {
+  width: 60%;
+  max-width: 1200px;
+  margin: 0 auto;   /* 화면 가운데 정렬 */
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .content {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    width: 100%;
+  }
+}

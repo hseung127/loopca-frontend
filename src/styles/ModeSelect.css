@@ -1,0 +1,71 @@
+.mode-select {
+  padding: 20px;
+  text-align: center;
+}
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+.section {
+  margin-bottom: 24px;
+}
+.section h3 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  text-align: left;
+}
+.btn-group {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+.select-btn {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: white;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+}
+.select-btn:hover {
+  background: #f8f9ff;
+  border-color: #4a6cf7;
+}
+.select-btn.active {
+  background: #eef2ff;       /* 선택 시 배경 */
+  border-color: #4a6cf7;     /* 파란 테두리 */
+  color: #4a6cf7;            /* 글씨 강조 */
+  font-weight: bold;
+}
+.select-btn.active .icon {
+  color: #4a6cf7;
+}
+.start-btn {
+  margin-top: 16px;
+  width: 100%;
+  padding: 14px;
+  background: #4a6cf7;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.start-btn:hover {
+  background: #3b55c5;
+}

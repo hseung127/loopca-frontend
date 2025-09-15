@@ -1,0 +1,33 @@
+
+/* 헤더는 항상 100% 차지
+.header {
+  width: 100%; !important
+  padding: 16px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+*/
+
+.title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.icon-btn {
+  position: absolute;
+  top: 16px;
+}
+
+/* 뒤로가기 버튼은 왼쪽 */
+.back-btn {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+/* 설정 버튼은 오른쪽 */
+.settings-btn {
+  right: 16px;
+}
