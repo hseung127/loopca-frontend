@@ -1,0 +1,24 @@
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #ddd;
+  background: white;
+  padding: 8px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.nav-btn {
+  font-size: 12px;
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav-btn.active {
+  color: #4a6cf7;
+}
+.nav-btn.active .icon {
+  color: #4a6cf7;
+}

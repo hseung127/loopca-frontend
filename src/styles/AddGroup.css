@@ -1,0 +1,84 @@
+.add-excel-page {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.add-excel-header {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.form-box label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #444;
+}
+
+.form-box input[type="text"],
+.form-box input[type="file"] {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.preview-box {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  background: #fafafa;
+  margin-bottom: 16px;
+}
+
+.preview-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.preview-box li {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.btn-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cancel-btn,
+.save-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background: #eee;
+  color: #333;
+}
+
+.save-btn {
+  background: #4a6cf7;
+  color: white;
+}
+.save-btn:hover {
+  background: #3a56c0;
+}

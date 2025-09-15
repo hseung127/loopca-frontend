@@ -1,0 +1,233 @@
+.main {
+  flex: 1;
+  padding: 16px;
+  position: relative;
+}
+.section-title {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.group-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.edit-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  color: #4a6cf7;
+}
+.group-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.group-info h4 {
+  margin: 0 0 4px;
+  font-size: 14px;
+}
+.group-info p {
+  margin: 0;
+  font-size: 12px;
+  color: #666;
+}
+.delete-btn .icon {
+  color: #e53935;
+}
+.floating-btn {
+  position: fixed;
+  bottom: 70px;         /* BottomNav 높이가 대략 50px + 여백 20px */
+  right: 20px;
+  background: #4a6cf7;
+  border-radius: 50%;
+  width: 56px;          /* 원형 크기 지정 */
+  height: 56px;
+  display: flex;        /* 아이콘 중앙 정렬 */
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.floating-btn .icon {
+  color: white;
+  width: 24px;
+  height: 24px;
+}
+
+
+/* 모달 기본 */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+}
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+.modal-btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.modal-btn.cancel {
+  background: #eee;
+}
+.modal-btn.save {
+  background: #4a6cf7;
+  color: white;
+}
+.modal h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 12px;   /* 제목과 인풋 사이 간격 */
+  text-align: center;
+}
+/* 그룹 정보 입력 */
+.modal .input-box {
+  margin: 0;
+}
+.modal .input-box + .input-box {
+  margin-top: 6px;
+}
+
+/* 엑셀 미리보기 */
+.preview-box {
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 12px;
+  font-size: 13px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.preview-box li {
+  padding: 4px 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.excel-row {
+  display: flex;
+  align-items: center;
+  margin: 6px 0 10px;
+}
+
+
+/* 엑셀 업로드 버튼: 테두리만 있는 작은 버튼 */
+.excel-upload-btn {
+  padding: 4px 10px;
+  background: none;
+  color: #4a6cf7;
+  border: 1px solid #4a6cf7;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.excel-upload-btn:hover {
+  background: #eef2ff;
+}
+
+/* 파일명 + 삭제버튼 한 줄 */
+.file-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* 좌측 정렬 */
+  gap: 6px;
+  margin: 4px 0 10px;
+}
+.file-name {
+  font-size: 13px;
+  color: #333;
+  word-break: break-all; /* 길면 줄바꿈 */
+}
+.file-clear-btn {
+  background: none;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  color: #000;
+  font-size: 13px;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  line-height: 1;
+}
+.file-clear-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+
+
+/* 업로드 엑셀 리스트 */
+.excel-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  table-layout: fixed; /* 칸 고정 */
+}
+.excel-table th,
+.excel-table td {
+  border-bottom: 1px solid #eee;
+  padding: 6px 8px;
+  text-align: left;
+  white-space: nowrap;       /* 한 줄로 표시 */
+  overflow: hidden;          /* 넘치면 숨김 */
+  text-overflow: ellipsis;   /* ... 처리 */
+}
+.excel-table th {
+  background: #f9f9f9;
+  font-weight: bold;
+}
+.excel-table td:first-child,
+.excel-table th:first-child {
+  width: 28px;      /* 순서 칸 좁게 */
+  min-width: 28px;
+  max-width: 30px;
+  text-align: left; /* 좌측 정렬 유지 */
+  padding-right: 4px;
+}
+.excel-table td:nth-child(2) {
+  width: 100px; /* 단어 칸 */
+}
+.excel-table td:nth-child(3) {
+  width: auto;  /* 설명 칸은 나머지 공간 */
+}
+
+/* 그룹 생성 전 */
+.empty-message {
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+  padding: 40px 16px;
+  line-height: 1.6;
+}
+.empty-message::before {
+  display: block;
+  font-size: 28px;
+  margin-bottom: 8px;
+  opacity: 0.7;
+}
+
