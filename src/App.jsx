@@ -1,4 +1,4 @@
-import "./styles/global.css";
+import "./styles/Global.css";
 import { useEffect } from "react";
 import AppRouter from "./routes/AppRouter";
 
