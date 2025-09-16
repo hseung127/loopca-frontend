@@ -231,3 +231,16 @@
   opacity: 0.7;
 }
 
+/* 예시 엑셀 다운로드 버튼 */
+.excel-download-link {
+  margin-left: 10px;
+  margin-top: 2px;
+  font-size: 12px;
+  color: #666;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.excel-download-link:hover {
+  color: #444;
+}
