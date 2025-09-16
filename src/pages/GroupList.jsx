@@ -199,6 +199,10 @@ export default function GroupList() {
                 style={{ display: "none" }}
                 onChange={handleExcelUpload}
               />
+              {/* 예시 엑셀 다운로드 링크 */}
+              <a href="/loopca_example.xlsx" download className="excel-download-link">
+                예시 엑셀 다운로드
+              </a>
             </div>
 
             {/* 파일명 + 삭제 버튼 */}
