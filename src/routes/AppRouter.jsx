@@ -3,10 +3,11 @@ import GroupList from "../pages/GroupList";
 import Flashcard from "../pages/Flashcard";
 import FlashcardComplete from "../pages/FlashcardComplete";
 import Profile from "../pages/Profile";
-import Layout from "../components/Layout";
 import ModeSelect from "../pages/ModeSelect";
 import SignUp from "../pages/SignUp";
 import Login from "../pages/Login";
+import Layout from "../components/Layout";
+import RequireAuth from "../components/RequireAuth";
 
 export default function AppRouter() {
   return (
@@ -19,9 +20,11 @@ export default function AppRouter() {
         <Route
           path="/"
           element={
-            <Layout title="LoopCa" showBottomNav>
-              <GroupList />
-            </Layout>
+            <RequireAuth>
+                <Layout title="LoopCa" showBottomNav>
+                  <GroupList />
+                </Layout>
+            </RequireAuth>
           }
         />
 
@@ -29,12 +32,11 @@ export default function AppRouter() {
         <Route
           path="/modeSelect/:groupIdx"
           element={
-            <Layout title="LoopCa" showBackBtn showBottomNav={false}>
-              <ModeSelect />
-            </Layout>
+                <Layout title="LoopCa" showBackBtn showBottomNav={false}>
+                  <ModeSelect />
+                </Layout>
           }
         />
-
 
         {/* 플래시카드 학습 */}
         <Route
@@ -45,15 +47,15 @@ export default function AppRouter() {
         {/* 학습 완료 화면 */}
         <Route path="/flashcard/complete" element={<FlashcardComplete />} />
 
-
-
         {/* 프로필 */}
         <Route
           path="/profile"
           element={
-            <Layout title="Profile" showBottomNav>
-              <Profile />
-            </Layout>
+              <RequireAuth>
+                <Layout title="Profile" showBottomNav>
+                  <Profile />
+                </Layout>
+              </RequireAuth>
           }
         />
       </Routes>
