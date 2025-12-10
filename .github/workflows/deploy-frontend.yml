@@ -28,16 +28,13 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Upload to S3 (DEV)
-        uses: jakejarvis/s3-sync-action@master
-        with:
-          args: --delete
+      - name: Upload dist folder itself to S3 (DEV)
+        run: |
+          aws s3 cp dist s3://${{ secrets.DEV_S3_BUCKET }}/dist --recursive
         env:
-          AWS_S3_BUCKET: ${{ secrets.DEV_S3_BUCKET }}
           AWS_ACCESS_KEY_ID: ${{ secrets.DEV_AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.DEV_AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.DEV_AWS_REGION }}
-          SOURCE_DIR: "dist"
 
       - name: Invalidate CloudFront cache (DEV)
         uses: chetan/invalidate-cloudfront-action@v2
