@@ -1,0 +1,49 @@
+name: Deploy Frontend (PROD)
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Generate .env file (PROD)
+        run: |
+          echo "VITE_API_URL=${{ secrets.PROD_VITE_API_URL }}" >> .env
+          echo "VITE_MODE=${{ secrets.PROD_VITE_MODE }}" >> .env
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Upload to S3 (PROD)
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --delete
+        env:
+          AWS_S3_BUCKET: ${{ secrets.PROD_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.PROD_AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.PROD_AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.PROD_AWS_REGION }}
+          SOURCE_DIR: "dist"
+
+      - name: Invalidate CloudFront cache (PROD)
+        uses: chetan/invalidate-cloudfront-action@v2
+        env:
+          AWS_REGION: ${{ secrets.PROD_AWS_REGION }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.PROD_AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.PROD_AWS_SECRET_ACCESS_KEY }}
+          DISTRIBUTION: ${{ secrets.PROD_CLOUDFRONT_DISTRIBUTION_ID }}
+          PATHS: "/*"
