@@ -9,7 +9,8 @@
 - 카드 플립, 별표 토글 등 인터랙션 및 모바일 환경 지원
   
 ## 인프라
-- AWS S3 정적 파일 배포
+- AWS S3 + CloudFront 정적 파일 배포
+- Cloudflare 도메인 연결
 - GitHub Actions CI/CD 파이프라인 구성
  
 ## 테스트 계정
