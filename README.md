@@ -18,5 +18,5 @@ PW: Test1234!
 ```
  
 ## 관련 링크
-- [프론트엔드 레포](https://github.com/hseung127/loopca-backend)
+- [백엔드 레포](https://github.com/hseung127/loopca-backend)
 - [데모 URL](https://dev.loopca.net)
