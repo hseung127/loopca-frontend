@@ -1,7 +1,7 @@
 # 스마트 암기카드 - Frontend
  
 ## 기술 스택
-`React` `JavaScript` `AWS S3` `CloudFront` `Cloudflare` `GitHub Actions`
+`React` `JavaScript` `AWS S3` `AWS CloudFront` `Cloudflare` `GitHub Actions`
  
 ## 주요 기능
 - 그룹/카드 관리 화면 구현 (생성, 삭제)
